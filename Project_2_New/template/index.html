@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Zerynth</title>
+        <!-- LOAD JQUERY AND BOOTSTRAP -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- LOAD THE ZERYNTH ADM JS LIBRARY -->
+        <script src="https://api.zerynth.com/zadm/latest/z.js"></script> 
+        <!-- LOAD jqwidget.js -->
+        <link rel="stylesheet" href="https://jqwidgets.com/public/jqwidgets/styles/jqx.base.css" type="text/css" />
+        <script src="https://jqwidgets.com/public/jqwidgets/jqx-all.js"></script>
+        <script type="text/javascript" src="https://www.jqwidgets.com/public/jqwidgets/jqxcore.js"></script>
+         <!-- CSS -->
+	    <link rel="stylesheet" href="style.css" >
+	    <!-- JS -->
+	    <script src="javascript.js"></script>
+    </head>
+    <body>
+        <div style="text-align:center">
+            <p id="status" style="background:#e8e8e8;font-weight:bold"></p>
+            <h1>LED CONTROL</h1>
+            <br>
+            <br>
+        </div>
+        
+        <div id="settings-panel">
+            <div class="sections-top-shadow"></div>
+    
+            <div class="settings-section-top settings-section">
+                <div class="settings-label">LED A</div>
+                <div class="settings-setter">
+                    <div id="button1"></div>
+                </div>
+            </div>
+            <div class="settings-section">
+                <div class="settings-label">LED B</div>
+                <div class="settings-setter">
+                    <div id="button2"></div>
+                </div>
+            </div>
+            <div class="settings-section">
+                <div class="settings-label">LED C</div>
+                <div class="settings-setter">
+                    <div id="button3"></div>
+                </div>
+            </div>
+            <div class="sections-section-bottom settings-section">
+                <div class="settings-label">LED D</div>
+                <div class="settings-setter">
+                    <div id="button4"></div>
+                </div>
+            </div>
+        </div>
+
+   </body>
+</html>
