@@ -1,10 +1,12 @@
-# Project 2
-# Created at 2018-05-16 13:42:31.299017
-
 import streams
+# import the wifi interface
 from wireless import wifi
+# the wifi module needs a networking driver to be loaded
+# in order to control the board hardware.
+# THIS EXAMPLE IS SET TO WORK WITH SPWF01SA WIFI DRIVER
 from stm.spwf01sa import spwf01sa as wifi_driver
 
+# Import the Zerynth APP library
 from zerynthapp import zerynthapp
 
 streams.serial()
@@ -20,13 +22,15 @@ sleep(1000)
 print("STARTING...")
 
 try:
-    wifi_driver.init(SERIAL2,D24, baud=9600) #slot B
+   # Wifi 4 Click on slot A(specify which serial port will be used and which RST pin)
+    wifi_driver.init(SERIAL2,D24, baud=9600) 
 except Exception as e:
     print(e)
     
 for i in range(0,5):
     try:
-        wifi.link("TOI",wifi.WIFI_WPA2,"!FH565sjkwork!") #ID e PASSWOR - WIFI MAST
+        # connect to the wifi network (Set your SSID and password below)
+        wifi.link("SSID",wifi.WIFI_WPA2,"PASSWORD") 
         break
     except Exception as e:
         print("Can't link",e)
@@ -36,12 +40,15 @@ else:
         sleep(1000)
 
 try:
-    zapp = zerynthapp.ZerynthApp("A1TJrua5TUip94vaFgDK7A", "Ru2Bx_0WTX2FoFAIN_Hh_g", log=True)
+    # Device UID and TOKEN can be created in the ADM panel
+    zapp = zerynthapp.ZerynthApp("DEVICE UID", "DEVICE TOKEN", log=True)
 except Exception as e:
     print(e)
 
 
-
+# Start the Zerynth app instance!
+# Remember to create a template with the files under the "template" folder you just cloned
+# upload it to the ADM and associate it with the connected device
 zapp.run()
 
 
@@ -53,12 +60,7 @@ def set_led(pin,status):
         digitalWrite(LED[pin],LOW)
 
 
-
-# def print_something(value):
-#     print(value)
-
-# zapp.on("print", print_something)
-
+# link "set_led" to the function set_led
 zapp.on("set_led", set_led)
 
 while True:
